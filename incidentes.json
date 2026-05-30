@@ -13,9 +13,33 @@
       "id": "INC-3306",
       "servicio": "Database Server Localhost",
       "puerto": 3306,
-      "amenaza": "Intento de Exfiltración por Inyección SQL",
+      "amenaza": "Intento de Exfiltracion por Inyeccion SQL",
       "mitigado": false,
-      "payload_analisis": "UNION SELECT username, password FROM web_users"
+      "payload_analisis": "UNION SELECT username, password FROM users"
+    },
+    {
+      "id": "INC-22",
+      "servicio": "SSH Remote Access Server",
+      "puerto": 22,
+      "amenaza": "Acceso SSH No Autorizado por Fuerza Bruta",
+      "mitigado": false,
+      "payload_analisis": "Multiples intentos fallidos desde IP 192.168.1.45"
+    },
+    {
+      "id": "INC-80",
+      "servicio": "Apache HTTP Server",
+      "puerto": 80,
+      "amenaza": "Escaneo de Puertos y Reconocimiento de Red",
+      "mitigado": true,
+      "payload_analisis": "Nmap scan detected: SYN stealth scan desde 10.0.0.22"
+    },
+    {
+      "id": "INC-8080",
+      "servicio": "Web Application Firewall",
+      "puerto": 8080,
+      "amenaza": "Ataque DDoS por Saturacion de Solicitudes HTTP",
+      "mitigado": false,
+      "payload_analisis": "2500 requests/segundo detectados desde botnet distribuida"
     }
   ]
 }
