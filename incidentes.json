@@ -1,0 +1,21 @@
+{
+  "soc_status": "ONLINE",
+  "incidentes": [
+    {
+      "id": "INC-443",
+      "servicio": "SSL Gateway Server",
+      "puerto": 443,
+      "amenaza": "Fuerza Bruta Excesiva en HTTPS",
+      "mitigado": true,
+      "payload_analisis": null
+    },
+    {
+      "id": "INC-3306",
+      "servicio": "Database Server Localhost",
+      "puerto": 3306,
+      "amenaza": "Intento de Exfiltración por Inyección SQL",
+      "mitigado": false,
+      "payload_analisis": "UNION SELECT username, password FROM web_users"
+    }
+  ]
+}
