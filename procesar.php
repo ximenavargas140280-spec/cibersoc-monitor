@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // SENTENCIA DE SALIDA: Renderizado dinámico desde el servidor hacia el cliente
     echo "<h2 style='color:#002D72;'>🚨 Registro de Incidente Exitoso (Backend PHP)</h2>";
     echo "<p><strong>ID de Seguimiento Único:</strong> " . $id_reporte . "</p>";
-    echo "<p><strong>Amenaza Identificada por el Analista:</strong> " . $amenaza_detectada . "</p>";
-    echo "<p><strong>Puerto de Red Asegurado en Localhost:</strong> " . $puerto_vulnerable . "</p>";
+    echo "<p><strong>Amenaza Identificada por el Analista:</strong> " . $nombre_amenaza . "</p>";
+    echo "<p><strong>Puerto de Red Asegurado en Localhost:</strong> " . $puerto_afectado . "</p>";
     echo "<br><br><a href='index.html' style='color:#B40000; font-weight:bold;'>Volver al Monitor SOC</a>";
 
 } else {

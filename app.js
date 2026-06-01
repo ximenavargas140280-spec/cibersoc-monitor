@@ -1,20 +1,34 @@
-// Captura de nodos interactivos del árbol DOM (Semana 1)
 const btnMonitorear = document.getElementById('btn-fetch');
 const contenedorLogs = document.getElementById('panel-incidentes');
 
-// PROGRAMACIÓN ORIENTADA A EVENTOS: Escuchador asociado al clic del analista (Semana 2)
 btnMonitorear.addEventListener('click', () => {
-    
-    // PETICIÓN ASÍNCRONA (AJAX): Consumo del archivo JSON local mediante Promesas
+
     fetch('incidentes.json')
-        .then(response => response.json()) // Serialización de los datos de la respuesta
+        .then(response => response.json())
         .then(data => {
-            contenedorLogs.innerHTML = ""; // Limpieza previa de la interfaz
+            contenedorLogs.innerHTML = "";
 
-            // DESAFÍO ALUMNO: Implementar el bucle iterativo (forEach) y utilizar funciones flecha (=>)
-            // El alumno debe recorrer el arreglo "data.incidentes" e inyectar de forma dinámica 
-            // componentes de tipo <article> modificando los nodos del DOM.
+            data.incidentes.forEach(incidente => {
+                const article = document.createElement('article');
+                const titulo = document.createElement('h3');
+                const servicio = document.createElement('p');
+                const puerto = document.createElement('p');
+                const amenaza = document.createElement('p');
+                const mitigado = document.createElement('p');
 
+                titulo.textContent = `Incidente: ${incidente.id}`;
+                servicio.textContent = `Servicio: ${incidente.servicio}`;
+                puerto.textContent = `Puerto: ${incidente.puerto}`;
+                amenaza.textContent = `Amenaza: ${incidente.amenaza}`;
+                mitigado.textContent = `Mitigado: ${incidente.mitigado ? "Si" : "No"}`;
+
+                article.appendChild(titulo);
+                article.appendChild(servicio);
+                article.appendChild(puerto);
+                article.appendChild(amenaza);
+                article.appendChild(mitigado);
+                contenedorLogs.appendChild(article);
+            });
         })
-        .catch(error => console.error("Excepción crítica en la lectura de logs:", error));
+        .catch(error => console.error("Error:", error));
 });
