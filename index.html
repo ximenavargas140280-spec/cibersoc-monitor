@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberSOC Portal Analyzer - AIEP Sede Bellavista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CyberSOC Portal Analyzer v1.0</h1>
+        <p>Dirección IP de Red: <span>127.0.0.1</span> (Localhost Loopback)</p>
+    </header>
+
+    <nav>
+        <button id="btn-fetch">Cargar Flujo de Logs Activos</button>
+    </nav>
+
+    <main>
+        <h2>Alertas de Tráfico en Tiempo Real (Capa UI)</h2>
+        
+        <section id="panel-incidentes"></section>
+
+        <div class="contenedor-formulario">
+            <h3>Reportar Nuevo Incidente a la Bitácora Central</h3>
+            
+            <form action="procesar.php" method="post">
+                <label for="amenaza_input">Nombre de la Amenaza / Vulnerabilidad:</label><br>
+                <input type="text" id="amenaza_input" name="amenaza_input" required placeholder="Ej: Ransomware, Phishing"><br><br>
+                
+                <label for="puerto_input">Puerto de Red Afectado:</label><br>
+                <input type="number" id="puerto_input" name="puerto_input" required placeholder="Ej: 80, 443, 3306"><br><br>
+                
+                <button type="submit">Enviar Reporte Seguro (POST)</button>
+
+            </form>
+        </div>
+    </main>
+
+    <div id="hidden-audit-layer" style="display: none;">
+        <p>Clave Maestra Interna Acceso DB: SECURE_CORE_KEY_2026</p>
+    </div>
+
+    <footer>
+        <p>Taller de Aplicaciones Web | Técnico en Ciberseguridad - AIEP Bellavista</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
