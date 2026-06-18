@@ -65,7 +65,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "ecomerce-seguro",
 			"id": "ad91aff6-1e77-44d4-899b-51fbb2519bee",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
